@@ -47,7 +47,7 @@ const addToFav = async (req, res) => {
     let email = req.params.email;
     let flowerId = req.params.flowerId;
     let user = await usersModel.findOne({ email: email });
-    let flower = await flowersModel.findOne({ flowerId });
+    let flower = await flowersModel.findOne({ _id: flowerId });
     user.favFlowers.push(flower);
     user.save();
     res.status(200).json(user);
