@@ -79,8 +79,8 @@ const updateFav = async (req, res) => {
         }
     });
     user.save();
-    let updateUser = await usersModel.findOneAndUpdate({ email: email }, user);
-    res.status(200).json(updateUser);
+    // let updateUser = await usersModel.findOneAndUpdate({ email: email }, user);
+    res.status(200).json(user);
 }
 
 module.exports = {
